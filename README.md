@@ -1,12 +1,14 @@
 # PasswordCrack
 
-crack password by dicts,
-suppert  single thread  md5 crack now  
-
+crack password by dicts
 all the dicts has created .This program will auto download the password dict which you specified.
 
 example dict_name:week_password_sample
 You could see all the dicts on: https://github.com/luaxlou/week_password/tree/master/dicts
+
+## features
+- single thread  md5 crack   
+- check password is week
 
 ## Installation
 
@@ -41,6 +43,24 @@ Or install it yourself as:
 
 ```
 
+
+```ruby
+ 
+      password = '12345679'
+      cracker = PasswordCrack::Cracker.new 
+      
+      expect('week_password_sample').to eq(cracker.check_is_week(password))
+
+      password = '1234569' 
+      
+      expect(nil).to eq(cracker.check_is_week(password))
+      
+      password1 = '20140501'
+    
+      expect('birthday').to eq(cracker.check_is_week(password1))
+
+```
+
 ## Command Line Usage
 
 ```bash
@@ -58,6 +78,22 @@ where [options] are:
 
 $ password_crack e10adc3949ba59abbe56e057f20f883e
 "crack success! result is:123456"
+```
+
+```bash
+$ password_is_week
+check passwrod is week
+
+Usage:
+    password_is_week <password>
+Example:
+    password_is_week 12345679
+  -h, --help    Show this message
+
+$ password_is_week 12345679
+"passowrd(12345679) is week,found in dict <week_password_sample>"
+$ password_is_week 1234569
+"passowrd(1234569) is strong now,just now."
 ```
 
 ## Contributing

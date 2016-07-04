@@ -25,8 +25,49 @@ module PasswordCrack
    end
 
 
+   def check_is_week password
+
+      p = PasswordChecker.new
+
+      return p.check password
+
+   end
+
+
 
  end
+
+
+ class PasswordChecker
+
+    def check password
+
+
+      result =  check_by_dict password,'week_password_sample'
+
+      return result if result
+
+      return check_by_dict password,'birthday'
+
+
+    end
+
+
+    def check_by_dict password,dict_name
+          d =   Dict.new dict_name
+          File.open(d.create).each_line() do |pass|
+ 
+              pass.chomp!
+
+               return dict_name if pass == password 
+
+          end
+
+          return nil
+    end
+
+
+ end 
 
 
   class Md5Cracker

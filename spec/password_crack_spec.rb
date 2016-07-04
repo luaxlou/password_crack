@@ -22,10 +22,28 @@ describe PasswordCrack do
       dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
   		result = cracker.crack md5Password,dict_name
   		expect(result).to eq('123456')
+
       md516Password = '49ba59abbe56e057'
       result = cracker.crack md516Password,dict_name
       expect(result).to eq('123456')
 
   end 
 
+
+ it 'check password is week' do
+
+      password = '12345679'
+      cracker = PasswordCrack::Cracker.new 
+      
+      expect('week_password_sample').to eq(cracker.check_is_week(password))
+
+      password = '1234569' 
+      
+      expect(nil).to eq(cracker.check_is_week(password))
+      
+      password1 = '20140501'
+    
+      expect('birthday').to eq(cracker.check_is_week(password1))
+
+  end 
 end
