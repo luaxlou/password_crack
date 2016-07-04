@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "password_crack"
   spec.version       = PasswordCrack::VERSION
   spec.authors       = ["Jhon"]
-  spec.email         = ["john@ezjie.com"]
+  spec.email         = ["luax@qq.com"]
 
   spec.summary       = "crack password by dict"
   spec.description   = "it's easy to crack password by dict"
