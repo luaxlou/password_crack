@@ -1,9 +1,7 @@
 # PasswordCrack
 
 crack password by dicts,
-suppert  single thread  md5 crack now 
-
-TODO: Delete this and the text above, and describe your gem
+suppert  single thread  md5 crack now  
 
 ## Installation
 
