@@ -26,6 +26,13 @@ Or install it yourself as:
 
     $ gem install password_crack
 
+if you catch some errors like this when install:
+```
+extconf.rb:156:in `main': C++11 is not supported by the compiler. (RuntimeError)
+```
+
+please see this:[https://github.com/masamitsu-murase/seven_zip_ruby/issues/11](https://github.com/masamitsu-murase/seven_zip_ruby/issues/11)
+
 ## Usage
  
 
