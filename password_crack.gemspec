@@ -6,7 +6,7 @@ require 'password_crack/version'
 Gem::Specification.new do |spec|
   spec.name          = "password_crack"
   spec.version       = PasswordCrack::VERSION
-  spec.authors       = ["Jhon"]
+  spec.authors       = ["luax"]
   spec.email         = ["luax@qq.com"]
 
   spec.summary       = "crack password by dict"
