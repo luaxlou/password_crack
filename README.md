@@ -39,7 +39,7 @@ Or install it yourself as:
 
 ```bash
 $ password_crack
-creack passwrod by dicts
+creack password by dicts
 
 Usage:
     password_crack <crypted_password> [options]
@@ -50,7 +50,8 @@ where [options] are:
   -c, --crypt=<s>    crypt type  (default: md5)
   -h, --help         Show this message
 
-
+$ password_crack e10adc3949ba59abbe56e057f20f883e
+"crack success! result is:123456"
 ```
 
 ## Contributing
