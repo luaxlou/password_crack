@@ -3,6 +3,11 @@
 crack password by dicts,
 suppert  single thread  md5 crack now  
 
+all the dicts has created .This program will auto download the password dict which you specified.
+
+example dict_name:week_password_sample
+You could see all the dicts on: https://github.com/luaxlou/week_password/tree/master/dicts
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -25,7 +30,8 @@ Or install it yourself as:
 ```ruby
     md5Password = 'e10adc3949ba59abbe56e057f20f883e'
     cracker = PasswordCrack::Md5Cracker.new 
-    dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+    dict_name = 'week_password_sample' 
+    #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
     result = cracker.crack md5Password,dict_name
     expect(result).to eq('123456')
       
