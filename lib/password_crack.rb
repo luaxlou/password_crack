@@ -12,13 +12,13 @@ module PasswordCrack
   class Md5Cracker
 
 
-
-      def crack md5Password,dict_name='week_password_sample.txt.md5'
+      #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+      def crack md5Password,dict_name='week_password_sample'
 
           iMd516 = (md5Password.length==16)
 
-          dict = Dict.new dict_name
-          File.open(dict.create).each_line() do |l|
+          d = Dict.new dict_name,'md5'
+           File.open(d.create).each_line() do |l|
 
               (md5,pass) = l.split "\t"
 
@@ -41,7 +41,12 @@ module PasswordCrack
 
  	class Dict
 
- 		def initialize dict_name
+ 		def initialize dict_name,dict_type=nil
+
+      dict_name = dict_name+ '.txt'
+
+      dict_name = dict_name + '.' + dict_type if dict_type
+
  			@dict_name = dict_name
  			@dict_path= Dir.tmpdir
  			@dict_filename = dict_name +'.7z'
