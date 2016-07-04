@@ -8,6 +8,26 @@ module PasswordCrack
 	DICT_DOWNLOAD_FOLDER = 'https://github.com/luaxlou/week_password/raw/master/dicts/'
  
 
+ class Cracker
+
+   def crack crypted_password,dict_name='week_password_sample',crypt_type='md5'
+
+      case crypt_type
+
+      when 'md5'
+        c = Md5Cracker.new 
+
+        return c.crack crypted_password,dict_name
+
+      end
+        
+
+   end
+
+
+
+ end
+
 
   class Md5Cracker
 

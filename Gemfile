@@ -5,3 +5,4 @@ gemspec
 
 gem 'mechanize'
 gem 'seven_zip_ruby'
+gem 'trollop'
