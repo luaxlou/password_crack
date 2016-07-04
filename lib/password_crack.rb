@@ -79,6 +79,7 @@ module PasswordCrack
           iMd516 = (md5Password.length==16)
 
           d = Dict.new dict_name,'md5'
+
            File.open(d.create).each_line() do |l|
 
               (md5,pass) = l.split "\t"
@@ -247,8 +248,12 @@ module PasswordCrack
 
 
         def write pathname,content
-         	File.write pathname,content
-        	p 'create new file: '+pathname
+                  File.open(pathname, "wb") do |file|
+
+                      file.write content
+                  end
+
+         	p 'create new file: '+pathname
 
         end	
  
