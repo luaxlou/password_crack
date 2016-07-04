@@ -6,9 +6,12 @@ all the dicts has created .This program will auto download the password dict whi
 example dict_name:week_password_sample
 You could see all the dicts on: https://github.com/luaxlou/week_password/tree/master/dicts
 
-## features
+## Features
 - single thread  md5 crack   
 - check password is week
+
+## Demo page
+http://tools.luaxlou.com/md5
 
 ## Installation
 
@@ -68,7 +71,7 @@ please see this:[https://github.com/masamitsu-murase/seven_zip_ruby/issues/11](h
 
 ```
 
-## Command Line Usage
+## Command line Usage
 
 ```bash
 $ password_crack
