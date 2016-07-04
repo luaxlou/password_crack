@@ -25,16 +25,34 @@ Or install it yourself as:
  
 
 ```ruby
-require 'password_crack'
-md5Password = 'e10adc3949ba59abbe56e057f20f883e'
-cracker = PasswordCrack::Md5Cracker.new 
-dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
-result = cracker.crack md5Password,dict_name
-p result
- 
-md516Password = '49ba59abbe56e057'
-result = cracker.crack md516Password,dict_name
-p result
+    md5Password = 'e10adc3949ba59abbe56e057f20f883e'
+    cracker = PasswordCrack::Md5Cracker.new 
+    dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+    result = cracker.crack md5Password,dict_name
+    expect(result).to eq('123456')
+      
+    md516Password = '49ba59abbe56e057'
+    result = cracker.crack md516Password,dict_name
+    expect(result).to eq('123456')
+
+```
+
+## Command Line Usage
+
+```bash
+$ password_crack
+creack passwrod by dicts
+
+Usage:
+    password_crack <crypted_password> [options]
+Example:
+    password_crack e10adc3949ba59abbe56e057f20f883e
+where [options] are:
+  -d, --dict=<s>     dict name (default: week_password_sample)
+  -c, --crypt=<s>    crypt type  (default: md5)
+  -h, --help         Show this message
+
+
 ```
 
 ## Contributing
