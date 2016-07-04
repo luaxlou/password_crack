@@ -22,4 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
+  spec.add_dependency "mechanize", "~> 2.7.4"
+  spec.add_dependency "seven_zip_ruby", "~> 1.2.4"
+  spec.add_dependency "trollop", "~> 2.1.2"
 end
