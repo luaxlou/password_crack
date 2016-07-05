@@ -151,7 +151,7 @@ module PasswordCrack
 
       else
 
-        write dict_timestamp_pathname,Time.now.to_i.to_s
+        write dict_timestamp_pathname,Time.now.to_i.to_s if(Time.now.to_i - local_timestamp > 10 *60) 
 
 
 
