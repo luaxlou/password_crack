@@ -135,6 +135,9 @@ module PasswordCrack
 
 
  		def load
+      return  if(Time.now.to_i - local_timestamp < 10 *60)
+      
+
   		if local_timestamp < server_timestamp
 
   				download_and_unpack
@@ -148,7 +151,7 @@ module PasswordCrack
 
       pathname = dict_pathname
 
-      load if !File.exists? pathname
+      load 
 
       pathname 
     end
