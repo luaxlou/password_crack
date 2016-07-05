@@ -40,16 +40,20 @@ please see this:[https://github.com/masamitsu-murase/seven_zip_ruby/issues/11](h
  
 
 ```ruby
-    md5Password = 'e10adc3949ba59abbe56e057f20f883e'
-    cracker = PasswordCrack::Md5Cracker.new 
-    dict_name = 'week_password_sample' 
-    #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
-    result = cracker.crack md5Password,dict_name
-    expect(result).to eq('123456')
-      
-    md516Password = '49ba59abbe56e057'
-    result = cracker.crack md516Password,dict_name
-    expect(result).to eq('123456')
+      md5Password = 'e10adc3949ba59abbe56e057f20f883e'
+      cracker = PasswordCrack::Md5Cracker.new 
+      dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+      result = cracker.crack md5Password,dict_name
+      expect(result).to eq('123456')
+
+      md516Password = '49ba59abbe56e057'
+      result = cracker.crack md516Password,dict_name
+      expect(result).to eq('123456')
+
+
+      dict_name = 'number_1_to_6'
+      result = cracker.crack md5Password,dict_name
+      expect(result).to eq('123456')
 
 ```
 

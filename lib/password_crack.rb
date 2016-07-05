@@ -27,6 +27,7 @@ module PasswordCrack
 
    def check_is_week password
 
+
       p = PasswordChecker.new
 
       return p.check password
@@ -42,6 +43,7 @@ module PasswordCrack
 
     def check password
 
+      return 'number_1_to_6' if password.scan(/^\d{1,6}$/).length >0
 
       result =  check_by_dict password,'week_password_sample'
 
@@ -73,12 +75,17 @@ module PasswordCrack
   class Md5Cracker
 
 
+
       #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
       def crack md5Password,dict_name='week_password_sample'
+
+          return '' if(md5Password == 'd41d8cd98f00b204e9800998ecf8427e')
 
           iMd516 = (md5Password.length==16)
 
           d = Dict.new dict_name,'md5'
+
+
 
            File.open(d.create).each_line() do |l|
 
@@ -136,13 +143,20 @@ module PasswordCrack
 
  		def load
       return  if(Time.now.to_i - local_timestamp < 10 *60)
-      
+        
 
   		if local_timestamp < server_timestamp
 
   				download_and_unpack
 
+      else
+
+        write dict_timestamp_pathname,Time.now.to_i.to_s
+
+
+
  			end	 
+
 
 
  		end 
@@ -196,17 +210,21 @@ module PasswordCrack
     end 
 
  		def local_timestamp
- 			t = read dict_timestamp_pathname
 
- 			return 0 if ( !t)
+      return @l_t.to_i if @l_t 
+ 			@l_t = read dict_timestamp_pathname
+
+ 			return 0 if ( !@l_t)
  				
- 			t.to_i
+ 			@l_t.to_i
 
  		end 
 
+
  		def server_timestamp
- 			t =download dict_timestamp_download_url
-      t.to_i
+      return @t if @t
+ 			@t =download dict_timestamp_download_url
+      @t.to_i
  		end 
 
  		def download_and_unpack

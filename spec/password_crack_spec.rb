@@ -27,6 +27,17 @@ describe PasswordCrack do
       result = cracker.crack md516Password,dict_name
       expect(result).to eq('123456')
 
+
+      dict_name = 'number_1_to_6'
+      result = cracker.crack md5Password,dict_name
+      expect(result).to eq('123456')
+
+
+
+      md5Password = 'd41d8cd98f00b204e9800998ecf8427e'
+      result = cracker.crack md5Password,dict_name
+      expect(result).to eq('')
+
   end 
 
 
