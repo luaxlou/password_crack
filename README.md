@@ -12,6 +12,7 @@ You could see all the dicts on: https://github.com/luaxlou/week_password/tree/ma
 
 ## Demo page
 http://tools.luaxlou.com/md5
+http://tools.luaxlou.com/weekpassword
 
 ## Installation
 
@@ -73,7 +74,7 @@ please see this:[https://github.com/masamitsu-murase/seven_zip_ruby/issues/11](h
     
       expect('birthday').to eq(cracker.check_is_week(password1))
 
-      
+
       password1 = 'lana'
     
       expect('words').to eq(cracker.check_is_week(password1))
