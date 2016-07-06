@@ -56,5 +56,9 @@ describe PasswordCrack do
     
       expect('birthday').to eq(cracker.check_is_week(password1))
 
+      password1 = 'lana'
+    
+      expect('words').to eq(cracker.check_is_week(password1))
+
   end 
 end

@@ -49,8 +49,12 @@ module PasswordCrack
 
       return result if result
 
-      return check_by_dict password,'birthday'
+      result =  check_by_dict password,'birthday'
 
+
+      return result if result
+
+      return  check_by_dict password,'words'
 
     end
 

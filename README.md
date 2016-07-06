@@ -73,6 +73,11 @@ please see this:[https://github.com/masamitsu-murase/seven_zip_ruby/issues/11](h
     
       expect('birthday').to eq(cracker.check_is_week(password1))
 
+      
+      password1 = 'lana'
+    
+      expect('words').to eq(cracker.check_is_week(password1))
+
 ```
 
 ## Command line Usage
