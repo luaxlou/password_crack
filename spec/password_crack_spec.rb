@@ -18,7 +18,7 @@ describe PasswordCrack do
   it 'create an md5 password' do
 
    		cracker = PasswordCrack::Md5Cracker.new 
-      dict_name =  #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+      dict_name =  'week_password_sample'  #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
   		result = cracker.crack 'e10adc3949ba59abbe56e057f20f883e',dict_name
   		expect(result).to eq('123456')
 
