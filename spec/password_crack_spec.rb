@@ -17,19 +17,16 @@ describe PasswordCrack do
 
   it 'create an md5 password' do
 
-  		md5Password = 'e10adc3949ba59abbe56e057f20f883e'
-  		cracker = PasswordCrack::Md5Cracker.new 
-      dict_name = 'week_password_sample' #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
-  		result = cracker.crack md5Password,dict_name
+   		cracker = PasswordCrack::Md5Cracker.new 
+      dict_name =  #all dict names:see https://github.com/luaxlou/week_password/tree/master/dicts
+  		result = cracker.crack 'e10adc3949ba59abbe56e057f20f883e',dict_name
   		expect(result).to eq('123456')
 
-      md516Password = '49ba59abbe56e057'
-      result = cracker.crack md516Password,dict_name
+       result = cracker.crack '49ba59abbe56e057',dict_name
       expect(result).to eq('123456')
 
 
-      dict_name = 'number_1_to_6'
-      result = cracker.crack md5Password,dict_name
+       result = cracker.crack '49ba59abbe56e057','number_1_to_6'
       expect(result).to eq('123456')
 
 
@@ -43,22 +40,15 @@ describe PasswordCrack do
 
  it 'check password is week' do
 
-      password = '12345679'
       cracker = PasswordCrack::Cracker.new 
       
-      expect('week_password_sample').to eq(cracker.check_is_week(password))
-
-      password = '1234569' 
-      
-      expect(nil).to eq(cracker.check_is_week(password))
-      
-      password1 = '20140501'
+      expect('week_password_sample').to eq(cracker.check_is_week('12345679'))
+       
+      expect(nil).to eq(cracker.check_is_week('1234569' ))   
+     
+      expect('birthday').to eq(cracker.check_is_week('20140501'))
     
-      expect('birthday').to eq(cracker.check_is_week(password1))
-
-      password1 = 'lana'
-    
-      expect('words').to eq(cracker.check_is_week(password1))
+      expect('words').to eq(cracker.check_is_week('lana'))
 
   end 
 end
